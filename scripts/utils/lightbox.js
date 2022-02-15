@@ -45,7 +45,7 @@ function lightboxContent(title, source, type, id, lightbox) {
       : document.createElement("video");
 
   type == "video" && content.setAttribute("controls", true);
-  // type == "video" && content.setAttribute("autoplay", true);
+  // type == "video" && content.setAttribute("autoplay", true);//Autoplay à évité
   content.setAttribute("src", source);
   content.classList.add("thumbnail");
   content.setAttribute("alt", "image");
@@ -60,20 +60,6 @@ function lightboxContent(title, source, type, id, lightbox) {
   lightbox.appendChild(container);
   container.appendChild(content);
   container.appendChild(titleText);
-
-  //Création des sous titres si c'est une video
-  if (type == "video") {
-    const subtitle = document.createElement("track");
-    subtitle.setAttribute("kind", "subtitles");
-    subtitle.setAttribute("label", "English");
-    subtitle.setAttribute("srclang", "en");
-    subtitle.setAttribute("src", "chrome-subtitles-zh.vtt");
-    const paragraph = document.createElement("h3");
-    paragraph.textContent =
-      "Ce navigateur ne prend pas en charge l'élément vidéo.";
-    content.appendChild(subtitle);
-    content.appendChild(paragraph);
-  }
 }
 
 /**

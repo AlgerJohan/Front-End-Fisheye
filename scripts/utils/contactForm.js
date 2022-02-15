@@ -47,7 +47,8 @@ function resetBorder(array) {
 }
 
 function changeBorder(element, color) {
-  element.style.border = "2px solid " + color;
+  element.style.border = `2px solid ${color}`;
+  // element.style.border = "2px solid " + color;//Déprécié
 }
 
 //Fonctions d'apparition et disparition des messages d'erreur

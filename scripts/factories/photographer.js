@@ -1,7 +1,7 @@
 function photographerFactory(data, mediaAll) {
   const { name, portrait, city, country, tagline, price, id, likes } = data;
-  // const picture = `assets/photographers/${portrait}`;
-  const picture = "assets/photographers/" + portrait;
+  const picture = `assets/photographers/${portrait}`;
+  // const picture = "assets/photographers/" + portrait;//Déprécié
   //Création des cards de chaque photographe
   function getUserCardDOM() {
     //Création de la balise article
@@ -10,7 +10,7 @@ function photographerFactory(data, mediaAll) {
     //Création de la balise image
     const img = document.createElement("img");
     img.setAttribute("src", picture);
-    img.setAttribute("alt", "Vignette du photographe : " + name);
+    img.setAttribute("alt", `Vignette du photographe : ${name}`);
 
     //Création de la balise h2
     const h2 = document.createElement("h2");
@@ -29,14 +29,13 @@ function photographerFactory(data, mediaAll) {
 
     //Création de la balise p
     const priceTag = document.createElement("p");
-    // priceTag.textContent = `${price}€/jours`;
-    priceTag.textContent = price + "€/jours";
+    priceTag.textContent = `${price}€/jours`;
+    // priceTag.textContent = price + "€/jours";//Déprécié
     priceTag.classList.add("price");
 
     //Création du lien vers la page de profil
     const link = document.createElement("a");
     link.setAttribute("href", "photographer.html?id=" + id);
-
     //Je crée un lien qui va me permettre de faire apparaître la page de profil
     article.appendChild(link);
     link.appendChild(img);
@@ -79,7 +78,7 @@ function photographerFactory(data, mediaAll) {
     //Création de la balise image
     const img = document.createElement("img");
     img.setAttribute("src", picture);
-    img.setAttribute("alt", `Vignette de contact :${name}`);
+    img.setAttribute("alt", `Vignette de contact : ${name}`);
 
     //Je crée un lien qui va me permettre de faire apparaître la page de profil
     article.appendChild(divGauche);
@@ -110,7 +109,7 @@ function photographerFactory(data, mediaAll) {
     i.classList.add("fa-heart");
 
     const p = document.createElement("p");
-    p.textContent = price + "€ / jour";
+    p.textContent = `${price}€ / jour`;
 
     countLikes.appendChild(divGauche);
     countLikes.appendChild(divDroite);
@@ -165,7 +164,7 @@ function mediaFactory(media, photographers) {
       showLightbox(title, source, type, id);
     });
     type == "image" &&
-      thumbnail.setAttribute("alt", "Vignette de media : " + title);
+      thumbnail.setAttribute("alt", `Vignette de media : ${title}`);
     const desc = document.createElement("div");
 
     //Création de la balise h2
@@ -174,7 +173,7 @@ function mediaFactory(media, photographers) {
 
     const divLikes = document.createElement("div");
     divLikes.classList.add("likes");
-    divLikes.setAttribute("alt", "Nombre de likes : " + likes);
+    divLikes.setAttribute("alt", `Nombre de likes : ${likes}`);
     //Création de la balise p
     const likeTag = document.createElement("p");
     likeTag.textContent = likes;
