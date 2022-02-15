@@ -17,8 +17,8 @@ function photographerFactory(data, mediaAll) {
     h2.textContent = name;
     //Création de la balise p
     const adresse = document.createElement("p");
-    // adresse.textContent = `${city}, ${country}`;
-    adresse.textContent = city + ", " + country;
+    adresse.textContent = `${city}, ${country}`;
+    // adresse.textContent = city + ", " + country; //Déprécié
 
     adresse.classList.add("adresse");
 
@@ -79,7 +79,7 @@ function photographerFactory(data, mediaAll) {
     //Création de la balise image
     const img = document.createElement("img");
     img.setAttribute("src", picture);
-    img.setAttribute("alt", "Vignette de contact : " + name);
+    img.setAttribute("alt", `Vignette de contact :${name}`);
 
     //Je crée un lien qui va me permettre de faire apparaître la page de profil
     article.appendChild(divGauche);
