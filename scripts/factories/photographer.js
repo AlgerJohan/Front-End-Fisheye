@@ -35,7 +35,7 @@ function photographerFactory(data, mediaAll) {
 
     //Création du lien vers la page de profil
     const link = document.createElement("a");
-    link.setAttribute("href", "photographer.html?id=" + id);
+    link.setAttribute("href", `photographer.html?id=${id}`);
     //Je crée un lien qui va me permettre de faire apparaître la page de profil
     article.appendChild(link);
     link.appendChild(img);
@@ -153,13 +153,13 @@ function mediaFactory(media, photographers) {
   function getMediaCardDom() {
     //Création de la balise article
     const article = document.createElement("article");
-
-    //Création de la balise image
+    //Création de la balise image/video
     let thumbnail = {};
     type == "image"
       ? (thumbnail = document.createElement("img"))
       : (thumbnail = document.createElement("video"));
     thumbnail.setAttribute("src", source);
+    // thumbnail.setAttribute("onclick", showLightbox(title, source, type, id));
     thumbnail.addEventListener("click", () => {
       showLightbox(title, source, type, id);
     });

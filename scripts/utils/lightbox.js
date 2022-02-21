@@ -87,7 +87,7 @@ function lightbox(title, source, type, id) {
  * @param {string} type - type de l'image à afficher
  * @param {string} id - identifiant de l'image à afficher
  */
-async function showLightbox(title, source, type, id) {
+function showLightbox(title, source, type, id) {
   document
     .getElementById("main")
     .appendChild(lightbox(title, source, type, id));
