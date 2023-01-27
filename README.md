@@ -4,4 +4,4 @@
 
 Rien à installer ici, il suffit d'ouvrir le fichier `index.html`.
 
-Lien site web: https://algerjohan.github.io/Front-End-Fisheye/
+Lien site web: https://johanlowenski.github.io/Front-End-Fisheye/
